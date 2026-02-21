@@ -2306,37 +2306,30 @@ def main(excel_path, output_dir="./output"):
             # 开始分析
             if st.button("🚀 开始分析", type="primary"):
                 with st.spinner("正在执行数据分析..."):
-                      # 1. 加载数据
-                      sheets,offer_base_info = load_excel_template(excel_path)
-                      print("✅ 数据加载完成")
-                      
-                      # 2. 执行各项计算
-                      total_data, date_new, date_old = calculate_total_data(sheets)
-                      print("✅ 规则1：总数据计算完成")
-                      
+
                       budget_fluctuation = calculate_budget_fluctuation(sheets,offer_base_info)
-                      print("✅ 规则2：预算波动计算完成")
+
                       
                       reject_event_df = calculate_reject_data(sheets)
-                      print("✅ 规则3：reject数据计算完成")
+
                       
                       advertiser_data = calculate_advertiser_data(sheets, date_new, date_old, reject_event_df)
-                      print("✅ 规则4：Advertiser数据计算完成")
+
                       
                       affiliate_data = calculate_affiliate_data(sheets, date_new, date_old, reject_event_df)
-                      print("✅ 规则5：Affiliate数据计算完成")
+
                       
                       large_drop_budget = calculate_large_drop_budget(sheets,offer_base_info)
-                      print("✅ 规则6：流水大幅下降预算计算完成")
+
                       
                       profit_influence = calculate_profit_influence(sheets, date_new, date_old)
-                      print("✅ 规则7：利润影响因素分析完成")
+
 
                       final_output = calculate_budget_rules(sheets,offer_base_info)
-                      print("✅ 规则8：核心事项分析完成")
+
                       
                       reject_analysis, non_reject_analysis = calculate_event_analysis(sheets,offer_base_info)
-                      print("✅ 规则9：事件率计算完成")
+
     
                      # 3. 合并所有结果到一个Excel（多个sheet）
                       output = BytesIO()
