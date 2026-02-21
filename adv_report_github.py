@@ -2264,7 +2264,7 @@ def download_github_template():
 
 
 
-def main(excel_path, output_dir="./output"):
+def main():
     st.title("📊 广告数据分析工具")
     st.divider()
     
