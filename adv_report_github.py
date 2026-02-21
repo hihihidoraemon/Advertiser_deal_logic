@@ -2307,6 +2307,11 @@ def main():
             if st.button("🚀 开始分析", type="primary"):
                 with st.spinner("正在执行数据分析..."):
 
+                      total_data, date_new, date_old = calculate_total_data(sheets)
+
+        
+
+                      
                       budget_fluctuation = calculate_budget_fluctuation(sheets,offer_base_info)
 
                       
@@ -2321,13 +2326,12 @@ def main():
                       
                       large_drop_budget = calculate_large_drop_budget(sheets,offer_base_info)
 
-                      
+
                       profit_influence = calculate_profit_influence(sheets, date_new, date_old)
 
-
+                      
                       final_output = calculate_budget_rules(sheets,offer_base_info)
 
-                      
                       reject_analysis, non_reject_analysis = calculate_event_analysis(sheets,offer_base_info)
 
     
