@@ -9,7 +9,7 @@ from io import BytesIO
 
 # -------------------------- 配置项 --------------------------
 # GitHub 模板文件的原始链接（替换为你的实际模板链接）
-GITHUB_TEMPLATE_URL = "https://github.com/hihihidoraemon/Advertiser_deal_logic/blob/main/20260126--%E7%BD%91%E7%9B%9F%E6%97%A5%E6%8A%A5%E6%A8%A1%E6%9D%BF%E6%9B%B4%E6%96%B0%20(6).xlsx"
+GITHUB_TEMPLATE_URL = "https://raw.githubusercontent.com/Advertiser_deal_logic/main/20260126--%E7%BD%91%E7%9B%9F%E6%97%A5%E6%8A%A5%E6%A8%A1%E6%9D%BF%E6%9B%B4%E6%96%B0%20(6).xlsx"
 # 页面基础配置
 st.set_page_config(
     page_title="广告数据分析工具",
