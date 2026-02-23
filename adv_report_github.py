@@ -721,13 +721,17 @@ def calculate_advertiser_data(sheets, date_new, date_old, reject_event_df):
     final_adv.rename(columns={'最新 Revenue': f'{date_new} Total Revenue'}, inplace=True)
     final_adv.rename(columns={'最新 Profit': f'{date_new} Total Profit'}, inplace=True)
     final_adv.rename(columns={'次新 Revenue': f'{date_old} Total Revenue'}, inplace=True)
-    final_adv.rename(columns={'次新 Profit': f'{date_old} Total Revenue'}, inplace=True)
+    final_adv.rename(columns={'次新 Profit': f'{date_old} Total Profit'}, inplace=True)
     final_adv.rename(columns={'最新 利润率': f'{date_new} 利润率'}, inplace=True)
     final_adv.rename(columns={'次新 利润率': f'{date_old} 利润率'}, inplace=True)
     final_adv.rename(columns={'最新 Total reject': f'{date_new} Total reject'}, inplace=True)
     final_adv.rename(columns={'最新 reject率': f'{date_new} reject率'}, inplace=True)
     final_adv.rename(columns={'次新 Total reject': f'{date_old} Total reject'}, inplace=True)
     final_adv.rename(columns={'次新 reject率': f'{date_old} reject率'}, inplace=True)
+
+
+
+    
     
     return final_adv.fillna(0)
 
@@ -792,7 +796,7 @@ def calculate_affiliate_data(sheets, date_new, date_old, reject_event_df):
     final_aff.rename(columns={'最新 Revenue': f'{date_new} Total Revenue'}, inplace=True)
     final_aff.rename(columns={'最新 Profit': f'{date_new} Total Profit'}, inplace=True)
     final_aff.rename(columns={'次新 Revenue': f'{date_old} Total Revenue'}, inplace=True)
-    final_aff.rename(columns={'次新 Profit': f'{date_old} Total Revenue'}, inplace=True)
+    final_aff.rename(columns={'次新 Profit': f'{date_old} Total Profit'}, inplace=True)
     final_aff.rename(columns={'最新 利润率': f'{date_new} 利润率'}, inplace=True)
     final_aff.rename(columns={'次新 利润率': f'{date_old} 利润率'}, inplace=True)
     final_aff.rename(columns={'最新 Total reject': f'{date_new} Total reject'}, inplace=True)
