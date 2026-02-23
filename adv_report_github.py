@@ -759,9 +759,9 @@ def calculate_affiliate_data(sheets, date_new, date_old, reject_event_df):
     # 计算利润率和变化幅度
     aff_merged["最新 利润率"] = aff_merged["最新 Profit"] / aff_merged["最新 Revenue"].replace(0, np.nan)
     aff_merged["次新 利润率"] = aff_merged["次新 Profit"] / aff_merged["次新 Revenue"].replace(0, np.nan)
-    aff_merged["Revenue 变化幅度(%)"] = (aff_merged["最新 Revenue"] - aff_merged["次新 Revenue"]) / aff_merged["次新 Revenue"].replace(0, np.nan) * 100
-    aff_merged["Profit 变化幅度(%)"] = (aff_merged["最新 Profit"] - aff_merged["次新 Profit"]) / aff_merged["次新 Profit"].replace(0, np.nan) * 100
-    aff_merged["利润率 变化幅度(%)"] = (aff_merged["最新 利润率"] - aff_merged["次新 利润率"]) / aff_merged["次新 利润率"].replace(0, np.nan) * 100
+    aff_merged["Revenue 变化幅度(%)"] = (aff_merged["最新 Revenue"] - aff_merged["次新 Revenue"]) / aff_merged["次新 Revenue"].replace(0, np.nan) 
+    aff_merged["Profit 变化幅度(%)"] = (aff_merged["最新 Profit"] - aff_merged["次新 Profit"]) / aff_merged["次新 Profit"].replace(0, np.nan) 
+    aff_merged["利润率 变化幅度(%)"] = (aff_merged["最新 利润率"] - aff_merged["次新 利润率"]) / aff_merged["次新 利润率"].replace(0, np.nan) 
     
     
     
