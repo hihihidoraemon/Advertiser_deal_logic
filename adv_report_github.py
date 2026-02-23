@@ -1398,14 +1398,18 @@ def calculate_profit_influence(sheets, date_new, date_old):
             offer_sorted = offer_base.sort_values("offer_profit_change", ascending=False)  # 上涨降序
             sort_desc = "降序"
         
-        # 3.4 筛选累计占比≥80%的核心offer
+        # 3.4 筛选利润绝对值变化超过10美金的核心offer
         total_offer_change = offer_sorted["offer_profit_change"].sum()
         if abs(total_offer_change) < 1e-6:
             top_offers = pd.DataFrame()
         else:
             offer_sorted["cumulative_change"] = offer_sorted["offer_profit_change"].cumsum()
             offer_sorted["cumulative_ratio"] = (offer_sorted["cumulative_change"] / total_offer_change * 100)
-            top_offers = offer_sorted[offer_sorted["cumulative_ratio"] <= 80.0].copy()
+            #top_offers = offer_sorted[offer_sorted["cumulative_ratio"] <= 80.0].copy()
+            if profit_trend == "下降":
+                top_offers = offer_sorted[offer_sorted["revenue_driven_change"] <- 10.0].copy()
+            else:
+                top_offers = offer_sorted[offer_sorted["revenue_driven_change"] >= 10.0].copy()
             # 兜底：无满足条件时取累计最接近的前10个
             if top_offers.empty:
                 offer_sorted["cumulative_ratio"] = offer_sorted["cumulative_change"].abs().cumsum() / abs(total_offer_change) * 100
