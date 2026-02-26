@@ -2197,7 +2197,7 @@ def calculate_budget_rules(sheets,offer_base_info):
     
     mask_p3 = (df_final["待办事项标记"] == "该流量近30天内有产生流水，但昨日无产生流水，推流量持续跑预算") & (df_final["排序"] <= 10) 
     
-    mask_p4 = (df_final["待办事项标记"].str.contains("该流量已经在其他offerid相同预算下(状态为暂停或者预算不足)产生流水")) & (df_final["排序"] <= 10) 
+    mask_p4 = (df_final["待办事项标记"].str.contains(r"流量已经在其他offerid相同预算下.*状态为暂停或者预算不足.*产生流水")) & (df_final["排序"] <= 10) 
 
     mask_all_rules = mask_p1 | mask_p2 | mask_p3|mask_p4
     
